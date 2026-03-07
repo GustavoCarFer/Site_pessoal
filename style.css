@@ -225,6 +225,18 @@ footer p {
         display: flex;
     }
 
+    .hamburguer.aberto span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburguer.aberto span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburguer.aberto span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
     nav ul {
         display: none;
         position: fixed;

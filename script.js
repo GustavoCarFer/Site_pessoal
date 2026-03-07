@@ -20,10 +20,12 @@ const navMenu = document.getElementById('nav-menu');
 
 hamburguer.addEventListener('click', function(){
     navMenu.classList.toggle('aberto');
+    hamburguer.classList.toggle('aberto')
 })
 
 navMenu.querySelectorAll('a').forEach(function(link){
     link.addEventListener('click', function(){
         navMenu.classList.remove('aberto');
+        hamburguer.classList.remove('aberto');
     })
 })
