@@ -187,3 +187,62 @@ footer p {
     opacity: 1;
     transform: translateY(0);
 }
+
+.hamburguer {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.hamburguer span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-primary);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+@media (max-width: 680px) {
+    h1 {
+        font-size: 36px;
+        letter-spacing: -1px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .skill-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hamburguer {
+        display: flex;
+    }
+
+    nav ul {
+        display: none;
+        position: fixed;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background-color: var(--bg);
+        flex-direction: column;
+        padding: 24px 32px;
+        gap: 24px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    nav ul.aberto {
+        display: flex;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+}
