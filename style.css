@@ -18,6 +18,7 @@ body {
     color: var(--text-primary);
     font-family: monospace;
     line-height: 1.7;
+    padding-top: 65px;
 }
 
 .container {
@@ -31,11 +32,17 @@ section {
 }
 
 nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
     padding: 20px 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--border);
+    background-color: var(--bg);
 }
 
 nav ul {
@@ -168,4 +175,15 @@ footer p {
     font-size: 12px;
     color: var(--text-secondary);
     letter-spacing: 0.08em;
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.visivel {
+    opacity: 1;
+    transform: translateY(0);
 }
