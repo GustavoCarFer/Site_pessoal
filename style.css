@@ -7,6 +7,7 @@
 :root {
     --bg: #080b10;
     --surface: #0e1520;
+    --banner: #12031a;
     --border: #1a2540;
     --accent: #4f6ef7;
     --text-primary: #e8eaf0;
@@ -25,6 +26,25 @@ body {
     max-width: 860px;
     margin: 0 auto;
     padding: 0 32px;
+    gap: 30px;
+}
+
+.sobre-container{
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.sobre-texto{
+    flex: 1;
+}
+
+.sobre-imagem img{
+    height: 280px;
+    width: 280px;
+    object-fit: cover;
+    border-radius: 300px;
+    border: solid 1px var(--border);
 }
 
 section {
@@ -42,7 +62,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--border);
-    background-color: var(--bg);
+    background-color: var(--banner);
 }
 
 nav ul {
@@ -101,7 +121,7 @@ h2 {
     line-height: 1.85;
 }
 
-.skill-grid {
+.skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;
@@ -143,14 +163,25 @@ h2 {
 .contact-list {
     list-style: none;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 8px;
-    max-width: 400px;
+}
+
+.contact-list svg{
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    transition: fill 0.25s ease;
+}
+
+.contact-list li{
+    flex: 1;
 }
 
 .contact-list a {
     display: flex;
     align-items: center;
+    gap: 10px;
     padding: 16px 20px;
     background: var(--surface);
     border: 1px solid var(--border);
@@ -158,6 +189,7 @@ h2 {
     color: var(--text-secondary);
     text-decoration: none;
     font-size: 13px;
+    width: 100%;
 }
 
 .contact-list a:hover {
@@ -208,6 +240,21 @@ footer p {
 }
 
 @media (max-width: 680px) {
+    .sobre-container {
+        flex-direction: column;
+        gap: 60px;
+        align-items: center;
+    }
+
+    .sobre-imagem{
+        order: -1;
+    }
+
+    .sobre-foto img {
+        height: auto;
+        width: 40%;
+    }
+
     h1 {
         font-size: 36px;
         letter-spacing: -1px;
@@ -217,7 +264,15 @@ footer p {
         font-size: 26px;
     }
 
-    .skill-grid {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-list {
+        flex-direction: column;
+    }
+
+    .contact-list a{
         grid-template-columns: 1fr;
     }
 
